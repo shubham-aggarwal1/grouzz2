@@ -1,0 +1,18 @@
+{
+  "name": "grouzz",
+  "version": "1.0.0",
+  "description": "A website for less carbon emission project named GROUZZ",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx nodemon index.js"
+  },
+  "author": "Shubham and Saksham",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "fs": "0.0.1-security",
+    "mongoose": "^6.0.10",
+    "mysql": "^2.18.1"
+  }
+}

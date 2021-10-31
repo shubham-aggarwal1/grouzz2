@@ -1,5 +1,5 @@
 const express = require("express");
-const port = 80;
+const port = 8000;
 const path=require('path');
 const mysql = require("mysql");
 

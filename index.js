@@ -1,5 +1,5 @@
 const express = require("express");
-const port = process.env.PORT||3000;
+//const port = process.env.PORT||3000;
 const path=require('path');
 const mysql = require("mysql");
 
@@ -48,7 +48,21 @@ app.post('/submit',function(req,res){
 
     return res.redirect('/');
  })
+app.get("/check", (req,res)=>res.send('check') )
+// Serve static assets if in productio
+  // Set static folder
+  // All the javascript and css files will be read and served from this folder
+  app.use(express.static("client/build"));
 
+  // index.html for all page routes  html or routing and naviagtion
+  app.get("*", (req, res) => {
+    console.log(req);
+    // res.redirect('https://' + req.headers.host + req.url);
+    res.sendFile(path.resolve(__dirname, "../client", "build", "index.html"));
+  });
+
+//PORT
+const port = process.env.PORT || 8000;
  app.listen(port,function(err){
     if(err){
         console.log(err);
